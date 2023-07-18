@@ -6,7 +6,7 @@ import (
 	"io/fs"
 	"strings"
 
-	"github.com/gobuffalo/pop/v6/logging"
+	"github.com/WilliamNHarvey/pop/v6/logging"
 )
 
 // MigrationBox is a wrapper around fs.FS and Migrator.

@@ -3,8 +3,8 @@ package pop
 import (
 	"io"
 
+	"github.com/WilliamNHarvey/pop/v6/columns"
 	"github.com/gobuffalo/fizz"
-	"github.com/gobuffalo/pop/v6/columns"
 )
 
 type crudable interface {

@@ -5,9 +5,9 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/gobuffalo/pop/v6/associations"
-	"github.com/gobuffalo/pop/v6/columns"
-	"github.com/gobuffalo/pop/v6/logging"
+	"github.com/WilliamNHarvey/pop/v6/associations"
+	"github.com/WilliamNHarvey/pop/v6/columns"
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	"github.com/gobuffalo/validate/v3"
 	"github.com/gofrs/uuid"
 )

@@ -7,10 +7,10 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/WilliamNHarvey/pop/v6"
+	"github.com/WilliamNHarvey/pop/v6/genny/config"
+	"github.com/WilliamNHarvey/pop/v6/internal/defaults"
 	"github.com/gobuffalo/genny/v2"
-	"github.com/gobuffalo/pop/v6"
-	"github.com/gobuffalo/pop/v6/genny/config"
-	"github.com/gobuffalo/pop/v6/internal/defaults"
 	"github.com/spf13/cobra"
 )
 

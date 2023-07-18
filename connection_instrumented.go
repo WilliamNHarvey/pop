@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"sync"
 
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	mysqld "github.com/go-sql-driver/mysql"
-	"github.com/gobuffalo/pop/v6/logging"
 	pgx "github.com/jackc/pgx/v4/stdlib"
 	"github.com/jmoiron/sqlx"
 	"github.com/luna-duclos/instrumentedsql"

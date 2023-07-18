@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/gobuffalo/pop/v6/logging"
+	"github.com/WilliamNHarvey/pop/v6/logging"
 )
 
 type operation string

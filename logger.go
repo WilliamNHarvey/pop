@@ -5,8 +5,8 @@ import (
 	stdlog "log"
 	"os"
 
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	"github.com/fatih/color"
-	"github.com/gobuffalo/pop/v6/logging"
 )
 
 // Debug mode, to toggle verbose log traces

@@ -10,8 +10,8 @@ import (
 	"path/filepath"
 	"text/template"
 
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/pop/v6/logging"
 	"gopkg.in/yaml.v2"
 )
 

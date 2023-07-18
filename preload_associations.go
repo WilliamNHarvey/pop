@@ -6,9 +6,9 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/WilliamNHarvey/pop/v6/internal/defaults"
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	"github.com/gobuffalo/flect"
-	"github.com/gobuffalo/pop/v6/internal/defaults"
-	"github.com/gobuffalo/pop/v6/logging"
 	"github.com/jmoiron/sqlx"
 	"github.com/jmoiron/sqlx/reflectx"
 )

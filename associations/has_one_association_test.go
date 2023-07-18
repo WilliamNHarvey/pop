@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/WilliamNHarvey/pop/v6/associations"
 	"github.com/gobuffalo/nulls"
-	"github.com/gobuffalo/pop/v6/associations"
 	"github.com/gofrs/uuid"
 	"github.com/stretchr/testify/require"
 )

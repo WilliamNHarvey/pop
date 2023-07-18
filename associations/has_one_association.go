@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"reflect"
 
+	"github.com/WilliamNHarvey/pop/v6/internal/defaults"
 	"github.com/gobuffalo/flect"
 	"github.com/gobuffalo/nulls"
-	"github.com/gobuffalo/pop/v6/internal/defaults"
 )
 
 // hasOneAssociation is a 1 to 1 kind of association. It's used on

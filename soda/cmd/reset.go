@@ -3,7 +3,7 @@ package cmd
 import (
 	"os"
 
-	"github.com/gobuffalo/pop/v6"
+	"github.com/WilliamNHarvey/pop/v6"
 	"github.com/spf13/cobra"
 )
 

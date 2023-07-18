@@ -13,11 +13,11 @@ import (
 	"strings"
 	"sync"
 
+	"github.com/WilliamNHarvey/pop/v6/columns"
+	"github.com/WilliamNHarvey/pop/v6/internal/defaults"
+	"github.com/WilliamNHarvey/pop/v6/logging"
 	"github.com/gobuffalo/fizz"
 	"github.com/gobuffalo/fizz/translators"
-	"github.com/gobuffalo/pop/v6/columns"
-	"github.com/gobuffalo/pop/v6/internal/defaults"
-	"github.com/gobuffalo/pop/v6/logging"
 	"github.com/gofrs/uuid"
 	_ "github.com/jackc/pgx/v4/stdlib" // Import PostgreSQL driver
 	"github.com/jmoiron/sqlx"

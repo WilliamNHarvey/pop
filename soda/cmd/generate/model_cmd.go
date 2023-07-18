@@ -5,14 +5,14 @@ import (
 	"os"
 	"os/exec"
 
+	"github.com/WilliamNHarvey/pop/v6"
+	"github.com/WilliamNHarvey/pop/v6/genny/fizz/ctable"
+	gmodel "github.com/WilliamNHarvey/pop/v6/genny/model"
 	"github.com/gobuffalo/attrs"
 	"github.com/gobuffalo/fizz"
 	"github.com/gobuffalo/genny/v2"
 	"github.com/gobuffalo/genny/v2/gogen"
 	"github.com/gobuffalo/logger"
-	"github.com/gobuffalo/pop/v6"
-	"github.com/gobuffalo/pop/v6/genny/fizz/ctable"
-	gmodel "github.com/gobuffalo/pop/v6/genny/model"
 	"github.com/spf13/cobra"
 )
 

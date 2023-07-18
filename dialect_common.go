@@ -50,7 +50,9 @@ func genericCreate(c *Connection, model *Model, cols columns.Columns, quoter quo
 	switch keyType {
 	case "int", "int64":
 		var id int64
-		cols.Remove(model.IDField())
+		if model.UsingAutoIncrement() {
+			cols.Remove(model.IDField())
+		}
 		w := cols.Writeable()
 		query := fmt.Sprintf("INSERT INTO %s (%s) VALUES (%s)", quoter.Quote(model.TableName()), w.QuotedString(quoter), w.SymbolizedString())
 		txlog(logging.SQL, c, query, model.Value)

@@ -85,6 +85,13 @@ func (m *Model) PrimaryKeyType() (string, error) {
 	return fbn.Type().Name(), nil
 }
 
+// UsingAutoIncrement returns true if the model is not opting out of autoincrement
+func (m *Model) UsingAutoIncrement() bool {
+	tag, err := m.tagForFieldByName("ID", "no_auto_increment")
+	// if there is no `no_auto_increment` tag, or tag isn't true, then we default to relying on auto increment
+	return err != nil || tag != "true"
+}
+
 // TableNameAble interface allows for the customize table mapping
 // between a name and the database. For example the value
 // `User{}` will automatically map to "users". Implementing `TableNameAble`
@@ -171,6 +178,14 @@ func (m *Model) fieldByName(s string) (reflect.Value, error) {
 		return fbn, fmt.Errorf("model does not have a field named %s", s)
 	}
 	return fbn, nil
+}
+
+func (m *Model) tagForFieldByName(fieldName string, tagName string) (string, error) {
+	fbn, ok := reflect.TypeOf(m.Value).Elem().FieldByName(fieldName)
+	if !ok {
+		return "", fmt.Errorf("model does not have a field named %s", fieldName)
+	}
+	return fbn.Tag.Get(tagName), nil
 }
 
 func (m *Model) associationName() string {

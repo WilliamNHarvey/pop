@@ -181,7 +181,11 @@ func (m *Model) fieldByName(s string) (reflect.Value, error) {
 }
 
 func (m *Model) tagForFieldByName(fieldName string, tagName string) (string, error) {
-	fbn, ok := reflect.TypeOf(m.Value).Elem().FieldByName(fieldName)
+	el := reflect.TypeOf(m.Value).Elem()
+	if el.Kind() != reflect.Struct {
+		return "", fmt.Errorf("model is not a struct")
+	}
+	fbn, ok := el.FieldByName(fieldName)
 	if !ok {
 		return "", fmt.Errorf("model does not have a field named %s", fieldName)
 	}

@@ -60,12 +60,15 @@ func genericCreate(c *Connection, model *Model, cols columns.Columns, quoter quo
 		if err != nil {
 			return err
 		}
-		id, err = res.LastInsertId()
-		if err == nil {
-			model.setID(id)
-		}
-		if err != nil {
-			return err
+		// If the model isn't using auto_increment, the id is already set
+		if model.UsingAutoIncrement() {
+			id, err = res.LastInsertId()
+			if err == nil {
+				model.setID(id)
+			}
+			if err != nil {
+				return err
+			}
 		}
 		return nil
 	case "UUID", "string":

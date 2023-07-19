@@ -129,7 +129,7 @@ func (m *Model) TableName() string {
 }
 
 func (m *Model) Columns() columns.Columns {
-	return columns.ForStructWithAlias(m.Value, m.TableName(), m.As, m.IDField())
+	return columns.ForStructWithAlias(m.Value, m.TableName(), m.As, columns.IDField{Name: m.IDField(), Writeable: !m.UsingAutoIncrement()})
 }
 
 func (m *Model) cacheKey(t reflect.Type) string {

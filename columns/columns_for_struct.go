@@ -4,15 +4,20 @@ import (
 	"reflect"
 )
 
+type IDField struct {
+	Name      string
+	Writeable bool
+}
+
 // ForStruct returns a Columns instance for
 // the struct passed in.
 func ForStruct(s interface{}, tableName, idField string) (columns Columns) {
-	return ForStructWithAlias(s, tableName, "", idField)
+	return ForStructWithAlias(s, tableName, "", IDField{Name: idField})
 }
 
 // ForStructWithAlias returns a Columns instance for the struct passed in.
 // If the tableAlias is not empty, it will be used.
-func ForStructWithAlias(s interface{}, tableName, tableAlias, idField string) (columns Columns) {
+func ForStructWithAlias(s interface{}, tableName, tableAlias string, idField IDField) (columns Columns) {
 	columns = NewColumnsWithAlias(tableName, tableAlias, idField)
 	defer func() {
 		if r := recover(); r != nil {
